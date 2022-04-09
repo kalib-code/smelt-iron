@@ -1,0 +1,56 @@
+{
+  "name": "@smelt/iron",
+  "description": "smelt with strapi v4",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "private": false,
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsup src/index.tsx --watch --dts --format esm,cjs,iife --legacy-output",
+    "build": "tsup src/index.tsx --dts --format esm,cjs,iife --minify --legacy-output",
+    "test": "jest --passWithNoTests --runInBand",
+    "prepare": "npm run build"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "author": "kalib-code",
+  "module": "dist/esm/index.js",
+  "devDependencies": {
+    "@types/jest": "^27.4.1",
+    "@types/qs": "^6.9.7",
+    "@types/react": "^18.0.0",
+    "jest": "^27.5.1",
+    "nock": "^13.1.3",
+    "react": "^18.0.0",
+    "ts-jest": "^27.1.3",
+    "tslib": "^2.3.1",
+    "tsup": "^5.11.13",
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "axios": "^0.21.4",
+    "qs": "^6.10.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "tsup": {
+    "entry": [
+      "src/index.ts"
+    ],
+    "splitting": false,
+    "sourcemap": true,
+    "clean": false,
+    "platform": "browser"
+  }
+}

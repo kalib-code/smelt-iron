@@ -1,0 +1,8 @@
+ {
+    "preset": "ts-jest",
+    "rootDir": "./src",
+    "name": "strapi-v4",
+    "displayName": "strapi-v4",
+    "setupFilesAfterEnv": ["../src/test/jest.setup.ts"],
+    "testEnvironment": "jsdom"
+}
